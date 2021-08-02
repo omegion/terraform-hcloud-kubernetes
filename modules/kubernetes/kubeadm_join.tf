@@ -42,6 +42,5 @@ data "template_file" "worker" {
 
   vars = {
     master_private_ip = local.master_private_ip
-    node_name = element(var.worker_nodes.*.name, count.index)
   }
 }

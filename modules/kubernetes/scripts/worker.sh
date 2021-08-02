@@ -16,4 +16,4 @@ kubeadm join --token=$${token} ${master_private_ip}:6443 \
 
 sleep 20
 
-kubectl label node ${node_name} node-role.kubernetes.io/worker=true
+kubectl label node --selector node-role.kubernetes.io/master!=true node-role.kubernetes.io/worker=true
