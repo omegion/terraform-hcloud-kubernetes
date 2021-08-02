@@ -13,7 +13,3 @@ token=$(cat /tmp/kubeadm_token)
 kubeadm join --token=$${token} ${master_private_ip}:6443 \
   --discovery-token-unsafe-skip-ca-verification \
   --ignore-preflight-errors=Swap
-
-sleep 20
-
-kubectl label node --selector node-role.kubernetes.io/master!=true node-role.kubernetes.io/worker=true
